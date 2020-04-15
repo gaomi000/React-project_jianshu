@@ -1,6 +1,8 @@
 import React , {Component} from "react";
 import { CSSTransition } from 'react-transition-group';
 import { connect } from 'react-redux'
+import { CSSTransition } from 'react-transition-group';
+import { actionCreators } from './store';
 
 import {
     HeaderWrapper,
@@ -26,7 +28,19 @@ class Header extends Component{
 					} */}
 					<NavItem className='right'>
 					</NavItem>
-                    <SearchWrapper></SearchWrapper>
+                    <SearchWrapper>
+						<CSSTransition
+							in={focused}
+							timeout={200}
+							classNames="slide"
+						>
+							<NavSearch
+								className={focused ? 'focused': ''}
+								onFocus={() => handleInputFocus(list)}
+								onBlur={handleInputBlur}
+							></NavSearch>
+						</CSSTransition>
+					</SearchWrapper>
                     <NavSearch></NavSearch>
                     
                     <NavItem className='right'>
