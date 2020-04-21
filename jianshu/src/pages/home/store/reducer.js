@@ -30,10 +30,10 @@ export default (state = defaultState, action) => {
 	switch(action.type) {
 		case constants.CHANGE_HOME_DATA:
 			return changeHomeData(state, action);
-		// case constants.ADD_ARTICLE_LIST:
-		// 	return addArticleList(state, action);
-		// case constants.TOGGLE_SCROLL_TOP:
-		// 	return state.set('showScroll', action.show);
+		case constants.ADD_ARTICLE_LIST:
+			return addArticleList(state, action);
+		case constants.TOGGLE_SCROLL_TOP:
+			return state.set('showScroll', action.show);
 		default:
 			return state;
 	}
