@@ -5,6 +5,8 @@ import List from './components/List';
 import Recommend from './components/Recommend';
 import Writer from './components/Writer';
 import { actionCreators } from './store';
+import { BackTop } from './style';
+
 import { 
 	HomeWrapper,
 	HomeLeft,
@@ -27,6 +29,7 @@ class Home extends PureComponent {
                     <Recommend />
 					<Writer />
                 </HomeRight>
+                { this.props.showScroll ? <BackTop onClick={this.handleScrollTop}>顶部</BackTop> : null}
             </HomeWrapper>
         )
     }

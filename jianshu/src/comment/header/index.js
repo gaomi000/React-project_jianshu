@@ -64,9 +64,9 @@ class Header extends Component {
 		const { focused, handleInputFocus, handleInputBlur, list, login, logout } = this.props;
 		return (
 			<HeaderWrapper>
-				{/* <Link to='/'>
+				<Link to='/'>
 					<Logo/>
-				</Link> */}
+				</Link>
 				<Nav>
 					<NavItem className='left active'>首页</NavItem>
 					<NavItem className='left'>下载App</NavItem>
